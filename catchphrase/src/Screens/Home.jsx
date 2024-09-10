@@ -8,6 +8,10 @@ import Modal from '../components/Modal';
 import Select from '../components/Select';
 import Div from '../components/Div';
 import { Fragment } from 'react';
+import { starWarsList, initialStarWarsList } from '../Data/starWars';
+import { harryPotterList, initialHarryPotterList } from '../Data/harryPotter';
+import { highRepublicList, intitialHighRepublicList } from '../Data/highRepublic';
+import { starWarsWithHighRepublicList, initialStarWarsWithHighRepublicList } from '../Data/starWarsWithHR';
 
 const StyledHome = styled.div`
     width: 100vw;
@@ -23,6 +27,7 @@ const Home = () => {
     const [openAnswers, setOpenAnswers] = useState(false);
     const [theme, setTheme] = useState('Star Wars');
     const [timerAudio, setTimerAudio] = useState(new Audio("/starWarsTimer.wav"));
+    const [winSound, setWinSound] = useState(new Audio("/yippee.wav"));
     const Ref = useRef(null);
     const [timer, setTimer] = useState("00");
     let nextId = 0;
@@ -31,8 +36,7 @@ const Home = () => {
         currentTheme: 'Star Wars',
         placeholder: 'THIS IS WHERE THE FUN BEGINS',
         oneName: 'Rebellion',
-        twoName: 'Empire',
-        winSound: new Audio('/yippee.wav')
+        twoName: 'Empire'
     })
 
     const [gameState, setGameState] = useState({
@@ -41,11 +45,11 @@ const Home = () => {
         skipped: 0,
         correct: 0,
         currentIndex: 0,
-        currentItem: 'Poggle the Lesser'
+        currentItem: ''
     });
 
-    const [masterList, setMasterList] = useState(['Boba Fett', 'Poggle the Lesser', 'Ben Swolo']);
-    const [initialMasterList, setInitialMasterList] = useState(['Boba Fett', 'Poggle the Lesser', 'Ben Swolo']);
+    const [masterList, setMasterList] = useState(starWarsList);
+    const [initialMasterList, setInitialMasterList] = useState(initialStarWarsList);
     const [skippedList, setSkippedList] = useState([]);
     const [correctList, setCorrectList] = useState([]);
     const { type } = useOrientation();
@@ -164,7 +168,7 @@ const Home = () => {
                     ...gameState,
                     teamOne: gameState.teamOne + 1
                 });
-                themeState.winSound.play();
+                winSound.play();
             } else {
                 setGameState({
                     ...gameState,
@@ -182,7 +186,7 @@ const Home = () => {
                     ...gameState,
                     teamTwo: gameState.teamTwo + 1
                 });
-                themeState.winSound.play();
+                winSound.play();
             } else {
                 setGameState({
                     ...gameState,
@@ -213,27 +217,48 @@ const Home = () => {
                     currentTheme: theme,
                     placeholder: 'THIS IS WHERE THE FUN BEGINS',
                     oneName: 'Rebellion',
-                    twoName: 'Empire',
-                    winSound: new Audio("/yippee.wav")
+                    twoName: 'Empire'
                 });
+                setMasterList(starWarsList);
+                setInitialMasterList(initialStarWarsList);
+                setTimerAudio(new Audio("/starWarsTimer.wav"));
+                setWinSound(new Audio("/yippee.wav"));
                 break;
             case 'Harry Potter':
                 setThemeState({
                     currentTheme: theme,
                     placeholder: 'I SOLEMNLY SWEAR THAT I AM UP TO NO GOOD',
                     oneName: 'Gryffindor',
-                    twoName: 'Slytherin',
-                    winSound: new Audio("/yippee.wav")
+                    twoName: 'Slytherin'
                 });
+                setMasterList(harryPotterList);
+                setInitialMasterList(initialHarryPotterList);
+                setTimerAudio(new Audio("/harryPotterTimer.wav"));
+                setWinSound(new Audio("/harryWoohoo.wav"));
                 break;
             case 'High Republic':
                 setThemeState({
                     currentTheme: theme,
                     placeholder: 'FOR LIGHT AND LIFE',
                     oneName: 'Republic',
-                    twoName: 'Nihil',
-                    winSound: new Audio("/yippee.wav")
+                    twoName: 'Nihil'
                 });
+                setMasterList(highRepublicList);
+                setInitialMasterList(intitialHighRepublicList);
+                setTimerAudio(new Audio("/lightsaberTimer.wav"));
+                setWinSound(new Audio("/yippee.wav"));
+                break;
+            case 'Star Wars + High Republic':
+                setThemeState({
+                    currentTheme: theme,
+                    placeholder: 'MAY THE FORCE BE WITH YOU',
+                    oneName: 'Republic',
+                    twoName: 'Sith'
+                });
+                setMasterList(starWarsWithHighRepublicList);
+                setInitialMasterList(initialStarWarsWithHighRepublicList);
+                setTimerAudio(new Audio("/starWarsTimer.wav"));
+                setWinSound(new Audio("/yippee.wav"));
                 break;
         }
     }
@@ -272,9 +297,6 @@ const Home = () => {
             currentItem: masterList[rand]
         })
 
-        console.log(gameState);
-        console.log(masterList);
-
     }
 
     // NEXT FUNCTION
@@ -299,9 +321,6 @@ const Home = () => {
             currentIndex: rand,
             currentItem: masterList[rand]
         })
-
-        console.log(gameState);
-        console.log(masterList);
 
     }
 
@@ -333,7 +352,7 @@ const Home = () => {
                                 <Button
                                     onClick={() => handleTeam(1)}
                                     disabled={isGoing()}
-                                    h='50%' 
+                                    h='50%'
                                     w='17%'
                                     bg='#999999'
                                     c='#023e8a'
@@ -431,6 +450,7 @@ const Home = () => {
                                         <option value='Star Wars'>Star Wars</option>
                                         <option value='Harry Potter'>Harry Potter</option>
                                         <option value='High Republic'>High Republic</option>
+                                        <option value='Star Wars + High Republic' >Star Wars + High Republic</option>
                                     </Select>
                                     <Button
                                         onClick={handleSubmitTheme}
