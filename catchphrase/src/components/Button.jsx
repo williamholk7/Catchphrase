@@ -13,12 +13,14 @@ const Button = styled.button`
     color: ${({ c }) => c};
     font-size: 20px;
     &:disabled {
-        background: #ccc;
-        color: #555;
+        background: #555;
+        color: #040404;
+        &:hover {
+        cursor: auto;
+        }
     }
     &:hover {
-        cursor: auto;
-        background: ${({ hbg }) => hbg};
+        cursor: pointer;
     }
 `
 export default Button;
