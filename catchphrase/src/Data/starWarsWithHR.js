@@ -1,5 +1,5 @@
 export const starWarsWithHighRepublicList = [
-    
+
     //HR JEDI
     'Loden Greatstorm',
     'Avar Kriss',
@@ -27,7 +27,7 @@ export const starWarsWithHighRepublicList = [
     'Imri Cantaros',
     'Qort',
     'Lula Talisola',
-    'Farzala Tarabal', 
+    'Farzala Tarabal',
     'Cohmac Vitus',
     'Jora Malli',
     'Bell Zettifar',
@@ -526,6 +526,8 @@ export const starWarsWithHighRepublicList = [
     'Lyn',
     'Fourth Sister',
     'Dante',
+    'Tales of the Empire',
+    'Tales of the Jedi',
 
     //REBELS
     'Kanan Jarrus',
@@ -762,6 +764,21 @@ export const starWarsWithHighRepublicList = [
     'Ben Solo',
     'Master Codebreaker',
 
+    //REBUILD THE GALAXY
+    'Rebuild the Galaxy',
+    'Sig Greebling',
+    'Darth Devastator',
+    'Bobarian Afol',
+    'The Separator',
+    'Dev Greebling',
+    'Fennesa',
+    'Yesi Scala',
+    'Lug',
+    'The Cornerstone',
+    'Servo',
+    'Ackbar Trooper',
+    'Force Builder',
+
     //ORGANIZATIONS
     'Techno Union',
     'Separatists',
@@ -801,7 +818,7 @@ export const starWarsWithHighRepublicList = [
     'Council of Neutral Systems',
     'Commerce Guild',
     'Seppies',
-
+    'Partisans',
 
 
     //PLANETS
@@ -977,6 +994,7 @@ export const starWarsWithHighRepublicList = [
     'Massif',
     'Ronto',
     'Aiwha',
+    'Nerf',
 
 
 
@@ -1324,6 +1342,15 @@ export const starWarsWithHighRepublicList = [
     'Saberdart',
     'Kalikori',
     'Tibanna Gas',
+    'Laser Sword',
+    'Seeing Stone',
+    'Trench Run',
+    'Pizza the Hutt',
+    'Electro-whip',
+    'Vocabulator',
+    'The Outer Rim Sieges',
+    'Nerf Herder',
+
 
 
     //BEHIND THE SCENES
@@ -1414,11 +1441,14 @@ export const starWarsWithHighRepublicList = [
     'Giancarlo Esposito',
     'Lars Mikkelsen',
     'Timothy Olyphant',
+    'Bobby Moynihan',
+    'Gaten Matarazzo',
+
 
 ];
 
 export const initialStarWarsWithHighRepublicList = [
-    
+
     //HR JEDI
     'Loden Greatstorm',
     'Avar Kriss',
@@ -1446,7 +1476,7 @@ export const initialStarWarsWithHighRepublicList = [
     'Imri Cantaros',
     'Qort',
     'Lula Talisola',
-    'Farzala Tarabal', 
+    'Farzala Tarabal',
     'Cohmac Vitus',
     'Jora Malli',
     'Bell Zettifar',
@@ -1945,6 +1975,8 @@ export const initialStarWarsWithHighRepublicList = [
     'Lyn',
     'Fourth Sister',
     'Dante',
+    'Tales of the Empire',
+    'Tales of the Jedi',
 
     //REBELS
     'Kanan Jarrus',
@@ -2181,6 +2213,21 @@ export const initialStarWarsWithHighRepublicList = [
     'Ben Solo',
     'Master Codebreaker',
 
+    //REBUILD THE GALAXY
+    'Rebuild the Galaxy',
+    'Sig Greebling',
+    'Darth Devastator',
+    'Bobarian Afol',
+    'The Separator',
+    'Dev Greebling',
+    'Fennesa',
+    'Yesi Scala',
+    'Lug',
+    'The Cornerstone',
+    'Servo',
+    'Ackbar Trooper',
+    'Force Builder',
+
     //ORGANIZATIONS
     'Techno Union',
     'Separatists',
@@ -2220,6 +2267,7 @@ export const initialStarWarsWithHighRepublicList = [
     'Council of Neutral Systems',
     'Commerce Guild',
     'Seppies',
+    'Partisans',
 
 
 
@@ -2396,6 +2444,7 @@ export const initialStarWarsWithHighRepublicList = [
     'Massif',
     'Ronto',
     'Aiwha',
+    'Nerf',
 
 
 
@@ -2743,6 +2792,15 @@ export const initialStarWarsWithHighRepublicList = [
     'Saberdart',
     'Kalikori',
     'Tibanna Gas',
+    'Laser Sword',
+    'Seeing Stone',
+    'Trench Run',
+    'Pizza the Hutt',
+    'Electro-whip',
+    'Vocabulator',
+    'The Outer Rim Sieges',
+    'Nerf Herder',
+
 
 
     //BEHIND THE SCENES
@@ -2833,5 +2891,8 @@ export const initialStarWarsWithHighRepublicList = [
     'Giancarlo Esposito',
     'Lars Mikkelsen',
     'Timothy Olyphant',
+    'Bobby Moynihan',
+    'Gaten Matarazzo',
+
 
 ];

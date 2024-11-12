@@ -258,6 +258,9 @@ export const starWarsList = [
     'Lyn',
     'Fourth Sister',
     'Dante',
+    'Tales of the Empire',
+    'Tales of the Jedi',
+
 
     //REBELS
     'Kanan Jarrus',
@@ -494,6 +497,22 @@ export const starWarsList = [
     'Ben Solo',
     'Master Codebreaker',
 
+    //REBUILD THE GALAXY
+    'Rebuild the Galaxy',
+    'Sig Greebling',
+    'Darth Devastator',
+    'Bobarian Afol',
+    'The Separator',
+    'Dev Greebling',
+    'Fennesa',
+    'Yesi Scala',
+    'Lug',
+    'The Cornerstone',
+    'Servo',
+    'Ackbar Trooper',
+    'Force Builder',
+
+
     //ORGANIZATIONS
     'Techno Union',
     'Separatists',
@@ -533,6 +552,7 @@ export const starWarsList = [
     'Council of Neutral Systems',
     'Commerce Guild',
     'Seppies',
+    'Partisans',
 
 
 
@@ -709,6 +729,7 @@ export const starWarsList = [
     'Massif',
     'Ronto',
     'Aiwha',
+    'Nerf',
 
 
 
@@ -1056,6 +1077,14 @@ export const starWarsList = [
     'Saberdart',
     'Kalikori',
     'Tibanna Gas',
+    'Laser Sword',
+    'Seeing Stone',
+    'Trench Run',
+    'Pizza the Hutt',
+    'Electro-whip',
+    'Vocabulator',
+    'The Outer Rim Sieges',
+    'Nerf Herder',
 
 
     //BEHIND THE SCENES
@@ -1146,6 +1175,9 @@ export const starWarsList = [
     'Giancarlo Esposito',
     'Lars Mikkelsen',
     'Timothy Olyphant',
+    'Bobby Moynihan',
+    'Gaten Matarazzo',
+
 
 
 ];
@@ -1410,6 +1442,9 @@ export const initialStarWarsList = [
     'Lyn',
     'Fourth Sister',
     'Dante',
+    'Tales of the Empire',
+    'Tales of the Jedi',
+
 
     //REBELS
     'Kanan Jarrus',
@@ -1646,6 +1681,22 @@ export const initialStarWarsList = [
     'Ben Solo',
     'Master Codebreaker',
 
+    //REBUILD THE GALAXY
+    'Rebuild the Galaxy',
+    'Sig Greebling',
+    'Darth Devastator',
+    'Bobarian Afol',
+    'The Separator',
+    'Dev Greebling',
+    'Fennesa',
+    'Yesi Scala',
+    'Lug',
+    'The Cornerstone',
+    'Servo',
+    'Ackbar Trooper',
+    'Force Builder',
+
+
     //ORGANIZATIONS
     'Techno Union',
     'Separatists',
@@ -1685,6 +1736,7 @@ export const initialStarWarsList = [
     'Council of Neutral Systems',
     'Commerce Guild',
     'Seppies',
+    'Partisans',
 
 
 
@@ -1861,7 +1913,7 @@ export const initialStarWarsList = [
     'Massif',
     'Ronto',
     'Aiwha',
-
+    'Nerf',
 
 
     //SENTIENT SPECIES
@@ -2208,6 +2260,15 @@ export const initialStarWarsList = [
     'Saberdart',
     'Kalikori',
     'Tibanna Gas',
+    'Laser Sword',
+    'Seeing Stone',
+    'Trench Run',
+    'Pizza the Hutt',
+    'Electro-whip',
+    'Vocabulator',
+    'The Outer Rim Sieges',
+    'Nerf Herder',
+
 
 
     //BEHIND THE SCENES
@@ -2298,6 +2359,7 @@ export const initialStarWarsList = [
     'Giancarlo Esposito',
     'Lars Mikkelsen',
     'Timothy Olyphant',
-
+    'Bobby Moynihan',
+    'Gaten Matarazzo',
 
 ];
