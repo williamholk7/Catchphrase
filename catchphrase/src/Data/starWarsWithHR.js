@@ -560,6 +560,8 @@ export const starWarsWithHighRepublicList = [
     'Noghri',
     'Derek "Hobbie" Klivian',
     'Maketh Tua',
+    'Brom Titus',
+    'The Ghost Crew',
 
 
 
@@ -570,6 +572,7 @@ export const starWarsWithHighRepublicList = [
     'Kawlan Roken',
     'Tala Durith',
     'Freck',
+    'Lola',
 
 
     //SOLO
@@ -764,6 +767,26 @@ export const starWarsWithHighRepublicList = [
     'Ben Solo',
     'Master Codebreaker',
 
+    // GALAXY\'S EDGE
+    'Galaxy\'s Edge',
+    'Bacara',
+    'Lieutenant Bek',
+    'Vi Moradi',
+    'Endorian Tip Yip',
+    'Surly Sarlacc',
+    'Takodana Quencher',
+    'Oga',
+    'Dok Ondar',
+    'Oga\'s Cantina',
+    'Dok Ondar\'s Den of Antiquities',
+    'Savi\'s Workshop',
+    'Bespin Fizz',
+    'Fuzzy Tauntaun',
+    'Yub Nub',
+    'Moof Juice',
+    'Ronto Roasters',
+    'Ronto Wrap',
+
     //REBUILD THE GALAXY
     'Rebuild the Galaxy',
     'Sig Greebling',
@@ -904,7 +927,7 @@ export const starWarsWithHighRepublicList = [
     'Concordia',
     'Kalevala',
     'Mortis',
-
+    'Bracca',
 
 
 
@@ -995,6 +1018,7 @@ export const starWarsWithHighRepublicList = [
     'Ronto',
     'Aiwha',
     'Nerf',
+    'Puffer Pig',
 
 
 
@@ -2009,6 +2033,9 @@ export const initialStarWarsWithHighRepublicList = [
     'Noghri',
     'Derek "Hobbie" Klivian',
     'Maketh Tua',
+    'Brom Titus',
+    'The Ghost Crew',
+
 
 
 
@@ -2019,6 +2046,7 @@ export const initialStarWarsWithHighRepublicList = [
     'Kawlan Roken',
     'Tala Durith',
     'Freck',
+    'Lola',
 
 
     //SOLO
@@ -2213,6 +2241,26 @@ export const initialStarWarsWithHighRepublicList = [
     'Ben Solo',
     'Master Codebreaker',
 
+    // GALAXY\'S EDGE
+    'Galaxy\'s Edge',
+    'Bacara',
+    'Lieutenant Bek',
+    'Vi Moradi',
+    'Endorian Tip Yip',
+    'Surly Sarlacc',
+    'Takodana Quencher',
+    'Oga',
+    'Dok Ondar',
+    'Oga\'s Cantina',
+    'Dok Ondar\'s Den of Antiquities',
+    'Savi\'s Workshop',
+    'Bespin Fizz',
+    'Fuzzy Tauntaun',
+    'Yub Nub',
+    'Moof Juice',
+    'Ronto Roasters',
+    'Ronto Wrap',
+
     //REBUILD THE GALAXY
     'Rebuild the Galaxy',
     'Sig Greebling',
@@ -2354,7 +2402,7 @@ export const initialStarWarsWithHighRepublicList = [
     'Concordia',
     'Kalevala',
     'Mortis',
-
+    'Bracca',
 
 
 
@@ -2445,6 +2493,7 @@ export const initialStarWarsWithHighRepublicList = [
     'Ronto',
     'Aiwha',
     'Nerf',
+    'Puffer Pig',
 
 
 

@@ -293,6 +293,9 @@ export const starWarsList = [
     'Noghri',
     'Derek "Hobbie" Klivian',
     'Maketh Tua',
+    'Brom Titus',
+    'The Ghost Crew',
+
 
 
 
@@ -303,7 +306,7 @@ export const starWarsList = [
     'Kawlan Roken',
     'Tala Durith',
     'Freck',
-
+    'Lola',
 
     //SOLO
     'Qi\'ra',
@@ -497,6 +500,27 @@ export const starWarsList = [
     'Ben Solo',
     'Master Codebreaker',
 
+    // GALAXY\'S EDGE
+    'Galaxy\'s Edge',
+    'Bacara',
+    'Lieutenant Bek',
+    'Vi Moradi',
+    'Endorian Tip Yip',
+    'Surly Sarlacc',
+    'Takodana Quencher',
+    'Oga',
+    'Dok Ondar',
+    'Oga\'s Cantina',
+    'Dok Ondar\'s Den of Antiquities',
+    'Savi\'s Workshop',
+    'Bespin Fizz',
+    'Fuzzy Tauntaun',
+    'Yub Nub',
+    'Moof Juice',
+    'Ronto Roasters',
+    'Ronto Wrap',
+
+
     //REBUILD THE GALAXY
     'Rebuild the Galaxy',
     'Sig Greebling',
@@ -639,6 +663,7 @@ export const starWarsList = [
     'Concordia',
     'Kalevala',
     'Mortis',
+    'Bracca',
 
 
 
@@ -730,6 +755,7 @@ export const starWarsList = [
     'Ronto',
     'Aiwha',
     'Nerf',
+    'Puffer Pig',
 
 
 
@@ -1477,6 +1503,9 @@ export const initialStarWarsList = [
     'Noghri',
     'Derek "Hobbie" Klivian',
     'Maketh Tua',
+    'Brom Titus',
+    'The Ghost Crew',
+
 
 
 
@@ -1487,6 +1516,7 @@ export const initialStarWarsList = [
     'Kawlan Roken',
     'Tala Durith',
     'Freck',
+    'Lola',
 
 
     //SOLO
@@ -1681,6 +1711,26 @@ export const initialStarWarsList = [
     'Ben Solo',
     'Master Codebreaker',
 
+    // GALAXY\'S EDGE
+    'Galaxy\'s Edge',
+    'Bacara',
+    'Lieutenant Bek',
+    'Vi Moradi',
+    'Endorian Tip Yip',
+    'Surly Sarlacc',
+    'Takodana Quencher',
+    'Oga',
+    'Dok Ondar',
+    'Oga\'s Cantina',
+    'Dok Ondar\'s Den of Antiquities',
+    'Savi\'s Workshop',
+    'Bespin Fizz',
+    'Fuzzy Tauntaun',
+    'Yub Nub',
+    'Moof Juice',
+    'Ronto Roasters',
+    'Ronto Wrap',
+
     //REBUILD THE GALAXY
     'Rebuild the Galaxy',
     'Sig Greebling',
@@ -1823,7 +1873,7 @@ export const initialStarWarsList = [
     'Concordia',
     'Kalevala',
     'Mortis',
-
+    'Bracca',
 
 
 
@@ -1914,6 +1964,7 @@ export const initialStarWarsList = [
     'Ronto',
     'Aiwha',
     'Nerf',
+    'Puffer Pig',
 
 
     //SENTIENT SPECIES

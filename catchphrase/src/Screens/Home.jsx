@@ -26,10 +26,14 @@ const Home = () => {
     const [openConfig, setOpenConfig] = useState(false);
     const [openAnswers, setOpenAnswers] = useState(false);
     const [theme, setTheme] = useState('Star Wars');
-    const [timerAudio, setTimerAudio] = useState(new Audio("/starWarsTimer.wav"));
     const [winSound, setWinSound] = useState(new Audio("/yippee.wav"));
-    const Ref = useRef(null);
-    const [timer, setTimer] = useState("00");
+    const [timesUp, setTimesUp] = useState(new Audio("/chewbacca.wav"));
+    const [timerAudio, setTimerAudio] = useState(new Audio("/catchphraseTimer.wav"));
+    timerAudio.onended = function() {
+        setPlaying(false);
+        timesUp.play();
+        console.log(playing);
+    };
     let nextId = 0;
 
     const [themeState, setThemeState] = useState({
@@ -53,6 +57,7 @@ const Home = () => {
     const [skippedList, setSkippedList] = useState([]);
     const [correctList, setCorrectList] = useState([]);
     const { type } = useOrientation();
+    const [playing, setPlaying] = useState(false);
 
     //RANDOM INDEX
 
@@ -60,72 +65,21 @@ const Home = () => {
         return Math.floor(Math.random() * array.length);
     }
 
-    //TIMER FUNCTIONS
-
-    const getTimeRemaining = (e) => {
-        const total =
-            Date.parse(e) - Date.parse(new Date());
-        const seconds = Math.floor((total / 1000) % 60);
-        return {
-            total,
-            seconds,
-        };
-    };
-
-    const startTimer = (e) => {
-        let { total, seconds } =
-            getTimeRemaining(e);
-
-        if (total >= 0) {
-            setTimer(
-                (seconds > 9 ? seconds : "0" + seconds)
-            );
-        }
-
-    };
-
-    const clearTimer = (e) => {
-        setTimer("00");
-
-        if (Ref.current) clearInterval(Ref.current);
-        const id = setInterval(() => {
-            startTimer(e);
-        }, 1000);
-        Ref.current = id;
-    };
-
-    const renewTimer = (e) => {
-        setTimer("53");
-        if (Ref.current) clearInterval(Ref.current);
-        const id = setInterval(() => {
-            startTimer(e);
-        }, 1000);
-        Ref.current = id;
-    };
-
-    const getDeadTime = () => {
-        let deadline = new Date();
-        deadline.setSeconds(deadline.getSeconds() + 53);
-        return deadline;
-    };
-
-
-    useEffect(() => {
-        clearTimer(0);
-    }, []);
-
-    //GO/STOP FUNCTIONS
-
-    const isGoing = () => {
-        if (timer === "00") {
-            return false;
-        }
-        return true;
+    const play = () => {
+        timerAudio.play();
+        setPlaying(true);
     }
 
-    const handleGoStop = (e) => {
+    const stop = () => {
+        timerAudio.pause();
+        timerAudio.currentTime = 0;
+        setTimerAudio(timerAudio);
+        setPlaying(false);
+    }
 
-        if (timer === "00") {
+    const handleGoStop = () => {
+        if (!playing) {
+            play();
             let rand = getRandom(masterList);
             setGameState({
                 ...gameState,
@@ -136,22 +90,17 @@ const Home = () => {
             })
             setSkippedList([]);
             setCorrectList([]);
-            renewTimer(getDeadTime());
-            timerAudio.play();
-            setTimerAudio(timerAudio);
         } else {
+            stop();
             let rand = getRandom(masterList);
             setGameState({
                 ...gameState,
                 currentIndex: rand,
                 currentItem: masterList[rand]
             })
-            timerAudio.pause();
-            timerAudio.currentTime = 0;
-            setTimerAudio(timerAudio);
-            clearTimer(0);
         }
-    };
+    }
+
 
     //TEAM INCREMENT FUNCTION
 
@@ -221,7 +170,7 @@ const Home = () => {
                 });
                 setMasterList(starWarsList);
                 setInitialMasterList(initialStarWarsList);
-                setTimerAudio(new Audio("/starWarsTimer.wav"));
+                setTimesUp(new Audio("/chewbacca.wav"));
                 setWinSound(new Audio("/yippee.wav"));
                 break;
             case 'Harry Potter':
@@ -233,7 +182,7 @@ const Home = () => {
                 });
                 setMasterList(harryPotterList);
                 setInitialMasterList(initialHarryPotterList);
-                setTimerAudio(new Audio("/harryPotterTimer.wav"));
+                setTimesUp(new Audio("/spell.wav"));
                 setWinSound(new Audio("/harryWoohoo.wav"));
                 break;
             case 'High Republic':
@@ -245,7 +194,7 @@ const Home = () => {
                 });
                 setMasterList(highRepublicList);
                 setInitialMasterList(intitialHighRepublicList);
-                setTimerAudio(new Audio("/lightsaberTimer.wav"));
+                setTimesUp(new Audio("/lightsaber.wav"));
                 setWinSound(new Audio("/yippee.wav"));
                 break;
             case 'Star Wars + High Republic':
@@ -257,7 +206,7 @@ const Home = () => {
                 });
                 setMasterList(starWarsWithHighRepublicList);
                 setInitialMasterList(initialStarWarsWithHighRepublicList);
-                setTimerAudio(new Audio("/starWarsTimer.wav"));
+                setTimesUp(new Audio("/lightsaber.wav"));
                 setWinSound(new Audio("/yippee.wav"));
                 break;
         }
@@ -336,7 +285,7 @@ const Home = () => {
                             fd='column'
                             jc='space-evenly'
                         >
-                            <Button onClick={handleGoStop}
+                            <Button onClick={() => handleGoStop()}
                                 h='17%'
                                 w='15%'
                                 bg='#45b3e0'
@@ -351,7 +300,7 @@ const Home = () => {
                             >
                                 <Button
                                     onClick={() => handleTeam(1)}
-                                    disabled={isGoing()}
+                                    disabled={playing}
                                     h='50%'
                                     w='17%'
                                     bg='#999999'
@@ -368,13 +317,13 @@ const Home = () => {
                                     br='5px'
                                 >
                                     <h1 className="roboto-regular" >{gameState.teamOne}</h1>
-                                    <h1 className="roboto-regular" style={{ textAlign: 'center', display: isGoing() ? "block" : "none" }} >{gameState.currentItem}</h1>
-                                    <h1 className="roboto-regular" style={{ textAlign: 'center', display: !isGoing() ? "block" : "none" }} >{themeState.placeholder}</h1>
+                                    <h1 className="roboto-regular" style={{ textAlign: 'center', display: playing ? "block" : "none" }} >{gameState.currentItem}</h1>
+                                    <h1 className="roboto-regular" style={{ textAlign: 'center', display: !playing ? "block" : "none" }} >{themeState.placeholder}</h1>
                                     <h1 className="roboto-regular">{gameState.teamTwo}</h1>
                                 </Card>
                                 <Button
                                     onClick={() => handleTeam(2)}
-                                    disabled={isGoing()}
+                                    disabled={playing}
                                     h='50%'
                                     w='17%'
                                     bg='#999999'
@@ -390,7 +339,7 @@ const Home = () => {
                             >
                                 <Button
                                     onClick={handleOpenConfig}
-                                    disabled={isGoing()}
+                                    disabled={playing}
                                     h='50%' w='17%'
                                     bg='#45b3e0'
                                     c='#023e8a'
@@ -402,7 +351,7 @@ const Home = () => {
                                 <h2 className="roboto-regular" >Correct: {gameState.correct}</h2>
                                 <Button
                                     onClick={handleOpenAnswers}
-                                    disabled={isGoing()}
+                                    disabled={playing}
                                     h='50%'
                                     w='17%'
                                     bg='#45b3e0'
@@ -415,7 +364,7 @@ const Home = () => {
                             <Div h='25%' jc='center' ai='center'>
                                 <Button
                                     onClick={handleSkip}
-                                    disabled={!isGoing()}
+                                    disabled={!playing}
                                     h='100%'
                                     w='15%'
                                     mr='80px'
@@ -426,7 +375,7 @@ const Home = () => {
                                 </Button>
                                 <Button
                                     onClick={handleNext}
-                                    disabled={!isGoing()}
+                                    disabled={!playing}
                                     h='100%'
                                     w='15%'
                                     bg='#45b3e0'
